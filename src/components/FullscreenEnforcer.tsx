@@ -131,10 +131,19 @@ const FullscreenEnforcer = () => {
               Fullscreen Security Mode
             </h1>
             
-            <p className="text-xl text-secure-muted max-w-2xl mx-auto">
+            <p className="text-xl text-secure-muted max-w-2xl mx-auto mb-6">
               This page enforces fullscreen mode for enhanced security and focus. 
               Any attempts to exit fullscreen or switch tabs will be detected and logged.
             </p>
+            
+            {!isFullscreen && (
+              <Button 
+                onClick={handleReturnToFullscreen}
+                className="bg-alert-bg hover:bg-alert-bg/80 text-alert-text font-medium"
+              >
+                Enter Fullscreen Mode
+              </Button>
+            )}
           </div>
 
           {/* Status Cards */}
